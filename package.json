@@ -1,0 +1,25 @@
+{
+  "name": "simplenodejsbackend",
+  "version": "1.0.0",
+  "description": "Simple Node Js BackEnd Development",
+  "main": "index.js",
+  "scripts": {
+    "test": "Simple BackEnd in Node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanValadezCastaneda/SimpleNodeJsBackend.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Node",
+    "JavaScript",
+    "BackEnd"
+  ],
+  "author": "Ivan Valadez Castaneda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IvanValadezCastaneda/SimpleNodeJsBackend/issues"
+  },
+  "homepage": "https://github.com/IvanValadezCastaneda/SimpleNodeJsBackend#readme"
+}
