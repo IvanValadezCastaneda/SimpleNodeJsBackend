@@ -19,6 +19,9 @@ router.get('/', (req, res) => {
   });
 });
 
+//"Here is where you should have your requisiciones. You can create a new requisicion by making a POST request to the /requisiciones endpoint,
+//fetch a requisicion by making a GET request to /requisiciones/:id and update a requisicion by making a PUT request to /requisiciones/:id"
+
 router.get('/:id', (req, res) => {
   const id = req.params.id;
   RequisicionesPool.query('SELECT * FROM requisiciones WHERE id = $1', [id], (err, result) => {
