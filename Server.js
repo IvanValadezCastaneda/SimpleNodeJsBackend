@@ -1,3 +1,6 @@
+//The request of the Enviorment File as entry to avoid the config lines
+require ("dotenv").config();
+
 const express = require('express');
 const app = express();
 
