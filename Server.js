@@ -34,6 +34,9 @@ app.get('/', (req, res) => {
 });
 
 /*
+Database/
+    |
+    |__DataBase.js 
 routes/
     |
     |__ User.js
