@@ -4,7 +4,7 @@
 </head>
 <body>
   <h1>Simple Node.js Backend</h1>
-  <p>Welcome to the Simple Node.js Backend project. This project is a basic backend server built with Node.js and Express.js. It allows you to create, read, update and delete users, catalogo, requisiciones and plantas.</p>
+  <p>Welcome to the Simple Node.js Backend project. This project is a basic backend server built with Node.js and Express.js. In this example i will Postgresql as a DB but feel free to use the one you have just is a matter of assigning the Passwords and the necessary Endpoints in this app t allows you to create, read, update and delete users, catalogo, requisiciones and plantas.</p>
   <h2>Getting Started</h2>
   <ol>
     <li>Clone or download the repository on your local machine.</li>
