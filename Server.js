@@ -1,6 +1,16 @@
 //The request of the Enviorment File as entry to avoid the config lines
 require ("dotenv").config();
 
+//To avoid Dos attacks you should limit your rate, this will help
+const rateLimit = require("express-rate-limit");
+
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per windowMs
+    message: "Too many requests from this IP, please try again later",
+  });
+  
+
 const express = require('express');
 const app = express();
 
@@ -12,10 +22,10 @@ const requisicionesRoutes = require('./Routes/Requisiciones');
 const plantasRoutes = require('./Routes/Plantas');
 
 // Use the imported routes
-app.use('/', indexRoutes);
-app.use('/users', userRoutes);
-app.use('/catalogo', catalogoRoutes);
-app.use('/requisiciones', requisicionesRoutes);
+app.use('/', indexRoutes,limiter);
+app.use('/users', userRoutes,limiter);
+app.use('/catalogo', catalogoRoutes,limiter);
+app.use('/requisiciones', requisicionesRoutes,limiter);
 app.use('/plantas', plantasRoutes);
 
 //Body Parser
