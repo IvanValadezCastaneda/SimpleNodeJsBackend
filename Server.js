@@ -1,5 +1,5 @@
 //The request of the Enviorment File as entry to avoid the config lines
-require ("dotenv").config();
+//require ("dotenv").config();
 
 //To avoid Dos attacks you should limit your rate, this will help
 const rateLimit = require("express-rate-limit");
