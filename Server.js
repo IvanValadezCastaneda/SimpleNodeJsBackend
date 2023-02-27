@@ -26,7 +26,7 @@ app.use('/', indexRoutes,limiter);
 app.use('/users', userRoutes,limiter);
 app.use('/catalogo', catalogoRoutes,limiter);
 app.use('/requisiciones', requisicionesRoutes,limiter);
-app.use('/plantas', plantasRoutes);
+app.use('/plantas', plantasRoutes,limiter);
 
 //Body Parser
 const bodyParser = require('body-parser');
