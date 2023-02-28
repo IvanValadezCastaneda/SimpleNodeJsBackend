@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "name": "John",
+      "surname": "Doe",
+      "position": "Manager",
+      "phones": ["(123) 456-7890", "(234) 567-8901"],
+      "emails": ["johndoe@example.com"]
+    },
+    {
+      "id": 2,
+      "name": "Jane",
+      "surname": "Doe",
+      "position": "Assistant Manager",
+      "phones": ["(345) 678-9012", "(456) 789-0123"],
+      "emails": ["janedoe@example.com"]
+    },
+    {
+      "id": 3,
+      "name": "Bob",
+      "surname": "Smith",
+      "position": "Developer",
+      "phones": ["(567) 890-1234", "(678) 901-2345"],
+      "emails": ["bobsmith@example.com"]
+    },
+    {
+      "id": 4,
+      "name": "Mary",
+      "surname": "Johnson",
+      "position": "QA Tester",
+      "phones": ["(789) 012-3456", "(890) 123-4567"],
+      "emails": ["maryjohnson@example.com"]
+    },
+    {
+      "id": 5,
+      "name": "Michael",
+      "surname": "Brown",
+      "position": "Designer",
+      "phones": ["(901) 234-5678", "(012) 345-6789"],
+      "emails": ["michaelbrown@example.com"]
+    },
+    {
+      "id": 6,
+      "name": "Emily",
+      "surname": "Davis",
+      "position": "Project Manager",
+      "phones": ["(234) 567-8901", "(345) 678-9012"],
+      "emails": ["emilydavis@example.com"]
+    },
+    {
+      "id": 7,
+      "name": "David",
+      "surname": "Garcia",
+      "position": "Software Engineer",
+      "phones": ["(456) 789-0123", "(567) 890-1234"],
+      "emails": ["davidgarcia@example.com"]
+    },
+    {
+      "id": 8,
+      "name": "Jessica",
+      "surname": "Wilson",
+      "position": "Product Manager",
+      "phones": ["(678) 901-2345", "(789) 012-3456"],
+      "emails": ["jessicawilson@example.com"]
+    },
+    {
+      "id": 9,
+      "name": "Ryan",
+      "surname": "Lee",
+      "position": "Data Analyst",
+      "phones": ["(890) 123-4567", "(901) 234-5678"],
+      "emails": ["ryanlee@example.com"]
+    },
+    {
+      "id": 10,
+      "name": "Kimberly",
+      "surname": "Chen",
+      "position": "Database Administrator",
+      "phones": ["(012) 345-6789", "(123) 456-7890"],
+      "emails": ["kimberlychen@example.com"]
+    }
+  ]
+  

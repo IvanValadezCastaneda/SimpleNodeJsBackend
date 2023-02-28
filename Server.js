@@ -14,6 +14,12 @@ const limiter = rateLimit({
 const express = require('express');
 const app = express();
 
+// this code is just to read my boilerplate data
+const fs = require('fs');
+
+const Usuarios;
+
+
 // Import route handlers
 const indexRoutes = require('./Routes/Index');
 const userRoutes = require('./Routes/Users');
