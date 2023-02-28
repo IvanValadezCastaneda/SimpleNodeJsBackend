@@ -18,6 +18,7 @@ router.post('/', (req, res) => {
   });
 });
 
+// get all plantas
 router.get('/', (req, res) => {
   PlantasPool.query('SELECT * FROM plantas', (err, result) => {
     if (err) {
@@ -29,6 +30,7 @@ router.get('/', (req, res) => {
   });
 });
 
+// get a planta by id
 router.get('/:id', (req, res) => {
   const id = req.params.id;
   PlantasPool.query('SELECT * FROM plantas WHERE id = $1', [id], (err, result) => {
@@ -43,6 +45,7 @@ router.get('/:id', (req, res) => {
   });
 });
 
+// update a planta by id
 router.put('/:id', (req, res) => {
   const id = req.params.id;
   const { name, location } = req.body;

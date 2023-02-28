@@ -13,15 +13,15 @@ const limiter = rateLimit({
 
 const express = require('express');
 const app = express();
+//const fs = require('fs');
 
-// this code is just to read my boilerplate data
-const fs = require('fs');
-
-const Usuarios;
-const Catalogo;
-const Requisiciones;
-const Plantas;
-
+// Read JSON data from files and store in memory as objects
+/*
+const catalogoData = JSON.parse(fs.readFileSync('./Data/Catalogo.json'));
+const requisicionesData = JSON.parse(fs.readFileSync('./Data/Requisiciones.json'));
+const usersData = JSON.parse(fs.readFileSync('./Data/Usuarios.json'));
+const plantasData = JSON.parse(fs.readFileSync('./Data/Plantas.json'));
+*/
 
 // Import route handlers
 const indexRoutes = require('./Routes/Index');

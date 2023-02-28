@@ -1,18 +1,18 @@
- [
-      {
-        "id": 1,
-        "name": "Planta A",
-        "location": "Mexico City"
-      },
-      {
-        "id": 2,
-        "name": "Planta B",
-        "location": "Monterrey"
-      },
-      {
-        "id": 3,
-        "name": "Planta C",
-        "location": "Guadalajara"
-      }
-    ]
+[
+    {
+      "id": 1,
+      "name": "Planta A",
+      "location": "Mexico City"
+    },
+    {
+      "id": 2,
+      "name": "Planta B",
+      "location": "Monterrey"
+    },
+    {
+      "id": 3,
+      "name": "Planta C",
+      "location": "Guadalajara"
+    }
+  ]
 
