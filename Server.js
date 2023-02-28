@@ -43,19 +43,5 @@ app.get('/', (req, res) => {
     res.send('Welcome to my Simple Node.Js Backend!');
 });
 
-/*
-Database/
-    |
-    |__DataBase.js 
-routes/
-    |
-    |__ User.js
-    |__ Requisiciones.js
-    |__ Plantas.js
-    |__ Catalogo.js
-    |__ Index.js
-Server.js
-package-lock.json
-package.json
-*/
+
 
