@@ -2,7 +2,7 @@ const { Pool } = require('pg');
 
 const pool = new Pool({
   user: 'SimpleNodeJsMaster',
-  host: 'LocalHost',
+  host: 'Localhost',
   database: 'SimpleNodeJsDataBase',
   password: 'SimpleNodeJsMasterPswd',
   port: 5432,

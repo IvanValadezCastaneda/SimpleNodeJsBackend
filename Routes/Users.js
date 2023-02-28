@@ -12,7 +12,7 @@ router.post('/', [
   validateLoginData
 ], (req, res) => {
   const { name, email } = req.body;
-  UsersPool.query('INSERT INTO users (name, email) VALUES ($1, $2)', [name, email], (err, result) => {
+  UsersPool.query('INSERT INTO usuarios (name, email) VALUES ($1, $2)', [name, email], (err, result) => {
     if (err) {
       console.error(err);
       res.status(500).send('Error creating user');
@@ -24,7 +24,7 @@ router.post('/', [
 
 
   router.get('/', (req, res) => {
-    UsersPool.query('SELECT * FROM users', (err, result) => {
+    UsersPool.query('SELECT * FROM usuarios', (err, result) => {
       if (err) {
         console.error(err);
         res.status(500).send('Error fetching users');
@@ -36,7 +36,7 @@ router.post('/', [
   
   router.get('/:id', (req, res) => {
     const id = validator.escape(req.params.id); // Sanitize user input
-    UsersPool.query('SELECT * FROM users WHERE id = $1', [id], (err, result) => {
+    UsersPool.query('SELECT * FROM usuarios WHERE id = $1', [id], (err, result) => {
       if (err) {
         console.error(err);
         res.status(500).send('Error fetching user');
@@ -54,7 +54,7 @@ router.post('/', [
     const { name, email } = req.body;
     const sanitizedName = validator.escape(name); // Sanitize user input
     const sanitizedEmail = validator.escape(email); // Sanitize user input
-    UsersPool.query('UPDATE users SET name = $1, email = $2 WHERE id = $3', [sanitizedName, sanitizedEmail, id], (err, result) => {
+    UsersPool.query('UPDATE usuarios SET name = $1, email = $2 WHERE id = $3', [sanitizedName, sanitizedEmail, id], (err, result) => {
       if (err) {
         console.error(err);
         res.status(500).send('Error updating user');
