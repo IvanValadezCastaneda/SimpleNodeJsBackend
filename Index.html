@@ -25,13 +25,13 @@
 				<button type="button" id="plantas-btn" class="btn btn-primary btn-lg btn-block" onclick="navigateTo('plantas')">Plantas</button>
 			</div>
 			<div class="col-sm-3">
-				<button type="button" id="requisciones-btn" class="btn btn-primary btn-lg btn-block" onclick="navigateTo('requisiciones')">Requisiciones</button>
+				<button type="button" id="requisiciones-btn" class="btn btn-primary btn-lg btn-block" onclick="navigateTo('requisiciones')">Requisiciones</button>
 			</div>
 			<div class="col-sm-3">
-				<button type="button" class="btn btn-primary btn-lg btn-block" onclick="navigateTo('users')">Users</button>
+				<button type="button" id="users-btn" class="btn btn-primary btn-lg btn-block" onclick="navigateTo('users')">Users</button>
 			</div>
 			<div class="col-sm-3">
-				<button type="button" class="btn btn-primary btn-lg btn-block" onclick="navigateTo('catalogo')">Catalogo</button>
+				<button type="button" id="catalogo-btn" class="btn btn-primary btn-lg btn-block" onclick="navigateTo('catalogo')">Catalogo</button>
 			</div>
 		</div>
 		<div class="row mb-3">
@@ -58,6 +58,50 @@
           data.forEach(entry => {
             const listItem = document.createElement('li');
             listItem.innerText = `${entry.id}: ${entry.name} - ${entry.location}`;
+            infoList.appendChild(listItem);
+          });
+        });
+    });
+
+    document.getElementById('requisiciones-btn').addEventListener('click', function() {
+      fetch('/requisiciones')
+        .then(response => response.json())
+        .then(data => {
+          // select the information list and clear any existing content
+          const infoList = document.getElementById('info-list');
+          infoList.innerHTML = '';
+          data.forEach(entry => {
+            const listItem = document.createElement('li');
+            listItem.innerText = `${entry.id}: ${entry.proyecto} - for plant:${entry.plant_id} cost ${entry.price_mxn} MXN and ${entry.price_usd} USD`;
+            infoList.appendChild(listItem);
+          });
+        });
+    });
+
+    document.getElementById('users-btn').addEventListener('click', function() {
+      fetch('/users')
+        .then(response => response.json())
+        .then(data => {
+          const infoList = document.getElementById('info-list');
+          infoList.innerHTML = '';
+          data.forEach(entry => {
+            const listItem = document.createElement('li');
+            listItem.innerText = `${entry.id}: ${entry.name} ${entry.surname}: ${entry.position} `;
+            infoList.appendChild(listItem);
+          });
+        });
+    });
+
+    document.getElementById('catalogo-btn').addEventListener('click', function() {
+      fetch('/catalogo')
+        .then(response => response.json())
+        .then(data => {
+          const infoList = document.getElementById('info-list');
+          infoList.innerHTML = '';
+  
+          data.forEach(entry => {
+            const listItem = document.createElement('li');
+            listItem.innerText = `${entry.item_id}: ${entry.item_name} - ${entry.brand}`;
             infoList.appendChild(listItem);
           });
         });
