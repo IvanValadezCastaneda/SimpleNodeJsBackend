@@ -1,0 +1,101 @@
+[
+      {
+        "item_id": 1,
+        "item_name": "Super Express Train",
+        "brand": "TrainCo",
+        "price_MXN": 2500,
+        "price_USD": 120,
+        "SKU": "TX001",
+        "shipping_time": "3 days",
+        "weight": "20 lbs",
+        "size": "3 ft x 1 ft x 1 ft"
+      },
+      {
+        "item_id": 2,
+        "item_name": "Railway Cargo Car",
+        "brand": "CargoMovers",
+        "price_MXN": 1000,
+        "price_USD": 50,
+        "SKU": "RM002",
+        "shipping_time": "2 days",
+        "weight": "10 lbs",
+        "size": "2 ft x 1 ft x 1 ft"
+      },
+      {
+        "item_id": 3,
+        "item_name": "Passenger Train Set",
+        "brand": "TrainCo",
+        "price_MXN": 5000,
+        "price_USD": 240,
+        "SKU": "TX002",
+        "shipping_time": "4 days",
+        "weight": "30 lbs",
+        "size": "4 ft x 2 ft x 1 ft"
+      },
+      {
+        "item_id": 4,
+        "item_name": "Locomotive Engine",
+        "brand": "TrainCo",
+        "price_MXN": 3500,
+        "price_USD": 170,
+        "SKU": "TX003",
+        "shipping_time": "3 days",
+        "weight": "25 lbs",
+        "size": "3 ft x 1 ft x 1.5 ft"
+      },
+      {
+        "item_id": 5,
+        "item_name": "Freight Train Car",
+        "brand": "CargoMovers",
+        "price_MXN": 1200,
+        "price_USD": 60,
+        "SKU": "RM003",
+        "shipping_time": "2 days",
+        "weight": "15 lbs",
+        "size": "2.5 ft x 1 ft x 1.5 ft"
+      },
+      {
+        "item_id": 6,
+        "item_name": "Railway Passenger Car",
+        "brand": "PassengerMovers",
+        "price_MXN": 2000,
+        "price_USD": 100,
+        "SKU": "PM001",
+        "shipping_time": "3 days",
+        "weight": "18 lbs",
+        "size": "3 ft x 1.5 ft x 1.5 ft"
+      },
+      {
+        "item_id": 7,
+        "item_name": "Railway Track Set",
+        "brand": "TrainCo",
+        "price_MXN": 800,
+        "price_USD": 40,
+        "SKU": "TX004",
+        "shipping_time": "1 day",
+        "weight": "10 lbs",
+        "size": "2.5 ft x 1 ft x 1 ft"
+      },
+      {
+        "item_id": 8,
+        "item_name": "Railway Signal Station",
+        "brand": "TrainCo",
+        "price_MXN": 1500,
+        "price_USD": 70,
+        "SKU": "TX005",
+        "shipping_time": "2 days",
+        "weight": "12 lbs",
+        "size": "2 ft x 1 ft x 1.5 ft"
+      },
+      {
+        "item_id": 9,
+        "item_name": "Railway Maintenance Car",
+        "brand": "MaintenanceMovers",
+        "price_MXN": 1800,
+        "price_USD": 85,
+        "SKU": "MM001",
+        "shipping_time": "2 days",
+        "weight": "12 lbs",
+        "size": "2 ft x 1 ft x 1.5 ft"
+      }
+]

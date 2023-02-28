@@ -1,0 +1,75 @@
+[
+      {
+        "id": 1,
+        "proyecto": "Proyecto 1",
+        "plant_id": 3,
+        "employee_id": 1,
+        "plant_name": "Plant C",
+        "item_id": 1,
+        "item_name": "Super Express Train",
+        "brand": "TrainCo",
+        "price_MXN": 2500,
+        "price_USD": 120,
+        "SKU": "TX001",
+        "shipping_time": "3 days"
+      },
+      {
+        "id": 2,
+        "proyecto": "Proyecto 1",
+        "plant_id": 1,
+        "employee_id": 10,
+        "plant_name": "Planta B",
+        "item_id": 4,
+        "item_name": "Locomotive Engine",
+        "brand": "TrainCo",
+        "price_MXN": 3500,
+        "price_USD": 170,
+        "SKU": "TX003",
+        "shipping_time": "3 days"
+      },
+      {
+        "id": 3,
+        "proyecto": "Proyecto 2",
+        "plant_id": 1,
+        "employee_id": 3,
+        "plant_name": "Planta A",
+        "item_id": 5,
+        "item_name": "Freight Train Car",
+        "brand": "CargoMovers",
+        "price_MXN": 1200,
+        "price_USD": 60,
+        "SKU": "RM003",
+        "shipping_time": "2 days"
+
+      },
+      {
+        "id": 4,
+        "proyecto": "Proyecto 2",
+        "plant_id": 2,
+        "employee_id": 4,
+        "plant_name": "Planta B",
+        "item_id": 8,
+        "item_name": "Railway Signal Station",
+        "brand": "TrainCo",
+        "price_MXN": 1500,
+        "price_USD": 70,
+        "SKU": "TX005",
+        "shipping_time": "2 days"
+      },
+      {
+        "id": 5,
+        "proyecto": "Proyecto 3",
+        "plant_id": 1,
+        "employee_id": 10,
+        "plant_name": "Planta A",
+        "item_id": 8,
+        "item_name": "Railway Signal Station",
+        "brand": "TrainCo",
+        "price_MXN": 1500,
+        "price_USD": 70,
+        "SKU": "TX005",
+        "shipping_time": "2 days"
+      }
+    ]
+  
+  

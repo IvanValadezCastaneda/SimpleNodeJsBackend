@@ -18,6 +18,9 @@ const app = express();
 const fs = require('fs');
 
 const Usuarios;
+const Catalogo;
+const Requisiciones;
+const Plantas;
 
 
 // Import route handlers
