@@ -1,8 +1,10 @@
 const express = require('express');
+const path = require('path');
+
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('Welcome to my Simple Node.Js Backend! Here you can create, read, update and delete users, catalogo, requisiciones and plantas');
+router.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '../Index.html'));
 });
 
 module.exports = router;

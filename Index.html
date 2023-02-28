@@ -1,24 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>My Node.js App</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-      /* Your styles here */
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Welcome to my Simple Node.js App</h1>
-    </header>
-    <main>
-      <p>This is my homepage. Just for you to check on the Output of the App</p>
-    </main>
-    <footer>
-      <p>&copy; Ivan Valadez</p>
-    </footer>
-  </body>
+<html>
+<head>
+	<title>Navigation Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<!-- Bootstrap JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="row mb-3">
+			<div class="col-sm-12">
+				<h1>Navigation Page</h1>
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col-sm-3">
+				<button type="button" id="plantas-btn" class="btn btn-primary btn-lg btn-block" onclick="navigateTo('plantas')">Plantas</button>
+			</div>
+			<div class="col-sm-3">
+				<button type="button" id="requisciones-btn" class="btn btn-primary btn-lg btn-block" onclick="navigateTo('requisiciones')">Requisiciones</button>
+			</div>
+			<div class="col-sm-3">
+				<button type="button" class="btn btn-primary btn-lg btn-block" onclick="navigateTo('users')">Users</button>
+			</div>
+			<div class="col-sm-3">
+				<button type="button" class="btn btn-primary btn-lg btn-block" onclick="navigateTo('catalogo')">Catalogo</button>
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col-sm-12">
+				<h2>Information</h2>
+				<ul id="info-list">
+					<!-- Placeholder for information -->
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script>
+
+    // add an event listener to the button
+    document.getElementById('plantas-btn').addEventListener('click', function() {
+      fetch('/plantas')
+        .then(response => response.json())
+        .then(data => {
+          // select the information list and clear any existing content
+          const infoList = document.getElementById('info-list');
+          infoList.innerHTML = '';
+    
+          // loop through the data and create a list item for each entry
+          data.forEach(entry => {
+            const listItem = document.createElement('li');
+            listItem.innerText = `${entry.id}: ${entry.name} - ${entry.location}`;
+            infoList.appendChild(listItem);
+          });
+        });
+    });
+    
+
+		// function to navigate to a specific page
+    function navigateTo(path) {
+      $.get('/' + path, function(data) {
+        $('#info-list').html(data);
+    
+        // Update the URL path without triggering a full page refresh
+        window.history.pushState(null, null, '/' + path);
+      });
+    }
+  
+	</script>
+</body>
+<footer>
+  <p>&copy; Ivan Valadez</p>
+</footer>
 </html>

@@ -22,7 +22,6 @@ const requisicionesData = JSON.parse(fs.readFileSync('./Data/Requisiciones.json'
 const usersData = JSON.parse(fs.readFileSync('./Data/Usuarios.json'));
 const plantasData = JSON.parse(fs.readFileSync('./Data/Plantas.json'));
 */
-
 // Import route handlers
 const indexRoutes = require('./Routes/Index');
 const userRoutes = require('./Routes/Users');
