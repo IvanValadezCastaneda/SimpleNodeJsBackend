@@ -7,8 +7,8 @@ const router = express.Router();
 //fetch a catalogo by making a GET request to /catalogo/:id and update a catalogo by making a PUT request to /catalogo/:id"
 
 router.post('/', (req, res) => {
-    const { name, price } = req.body;
-    CatalogoPool.query('INSERT INTO catalogo (item_name, price) VALUES ($1, $2)', [name, price], (err, result) => {
+    const { item_name, brand, price_MXN, price_USD, SKU, shipping_time, weight, size } = req.body;
+    CatalogoPool.query('INSERT INTO catalogo (item_name, brand, price_MXN, price_USD, SKU, shipping_time, weight, size) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)', [item_name, brand, price_MXN, price_USD, SKU, shipping_time, weight, size], (err, result) => {
       if (err) {
         console.error(err);
         res.status(500).send('Error creating catalog');
@@ -47,8 +47,8 @@ router.get('/:id', (req, res) => {
 
 router.put('/:id', (req, res) => {
     const { id } = req.params;
-    const { name, price } = req.body;
-    CatalogoPool.query('UPDATE catalogo SET item_name = $1, price = $2 WHERE item_id = $3', [name, price, id], (err, result) => {
+    const { item_name, brand, price_MXN, price_USD, SKU, shipping_time, weight, size } = req.body;
+    CatalogoPool.query('UPDATE catalogo SET item_name = $1, brand = $2, price_MXN = $3, price_USD = $4, SKU = $5, shipping_time = $6, weight = $7, size = $8 WHERE item_id = $9', [item_name, brand, price_MXN, price_USD, SKU, shipping_time, weight, size, id], (err, result) => {
       if (err) {
         console.error(err);
         res.status(500).send('Error updating catalog');

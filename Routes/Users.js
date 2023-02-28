@@ -1,5 +1,6 @@
 const UsersPool = require ('../Database/DataBase');
 
+
 const {validateLoginData} = require ('../Validators/EmailValidatior');
 const {validateNameData} = require('../Validators/NameValidator');
 
@@ -12,7 +13,7 @@ router.post('/', [
   validateLoginData
 ], (req, res) => {
   const { name, email } = req.body;
-  UsersPool.query('INSERT INTO usuarios (name, email) VALUES ($1, $2)', [name, email], (err, result) => {
+  UsersPool.query('INSERT INTO usuarios (name, emails) VALUES ($1, $2)', [name, email], (err, result) => {
     if (err) {
       console.error(err);
       res.status(500).send('Error creating user');
@@ -35,20 +36,20 @@ router.post('/', [
   });
   
   router.get('/:id', (req, res) => {
-    const id = validator.escape(req.params.id); // Sanitize user input
+    const id = req.params.id;
     UsersPool.query('SELECT * FROM usuarios WHERE id = $1', [id], (err, result) => {
       if (err) {
         console.error(err);
-        res.status(500).send('Error fetching user');
+        res.status(500).send(`Error fetching usuario with id ${id}`);
       } else if (result.rows.length === 0) {
-        res.status(404).send('User not found');
+        res.status(404).send(`usuario with id ${id} not found`);
       } else {
-        const user = result.rows[0];
-        const encodedName = validator.escape(user.name); // Sanitize user output
-        res.render('user', { name: encodedName });
+        res.send(result.rows[0]);
       }
     });
   });
+
+
   router.put('/:id', (req, res) => {
     const id = validator.escape(req.params.id); // Sanitize user input
     const { name, email } = req.body;
