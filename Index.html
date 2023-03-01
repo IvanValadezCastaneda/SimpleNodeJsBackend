@@ -52,60 +52,73 @@
 	</div>
 	<script>
     //add event if you want to get a specific id
-    function getById() {
-      const id = document.getElementById('id-input').value;
-      const path = window.location.pathname + '/' + id;
-      
-      if(path.includes("/plantas")){
-      fetch(path)
-        .then(response => response.json())
-        .then(data => {
-          const infoList = document.getElementById('info-list');
-          infoList.innerHTML = '';
-    
-          const listItem = document.createElement('li');
-          listItem.innerText = `${data.id}: ${data.name} - ${data.location}`;
-          infoList.appendChild(listItem);
+    function fetchData(path) {
+      return fetch(path)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          throw error;
         });
-      }
-      else if(path.includes("/requisiciones")){
-      fetch(path)
-        .then(response => response.json())
-        .then(data => {
-          const infoList = document.getElementById('info-list');
-          infoList.innerHTML = '';
+    }
     
-          const listItem = document.createElement('li');
-          listItem.innerText = `${data.id}: ${data.proyecto} - for plant:${data.plant_id} cost ${data.price_mxn} MXN and ${data.price_usd} USD`;
-          infoList.appendChild(listItem);
-        });
-      }
-      else if(path.includes("/catalogo")){
-      fetch(path)
-        .then(response => response.json())
-        .then(data => {
-          const infoList = document.getElementById('info-list');
-          infoList.innerHTML = '';
+    function displayData(data, endpoint) {
+      const infoList = document.getElementById('info-list');
+      infoList.innerHTML = '';
     
-          const listItem = document.createElement('li');
-          listItem.innerText = `${data.item_id}: ${data.item_name} - ${data.brand}`;
-          infoList.appendChild(listItem);
-        });
-      }
-      else if(path.includes("/users")){
-      fetch(path)
-        .then(response => response.json())
-        .then(data => {
-          const infoList = document.getElementById('info-list');
-          infoList.innerHTML = '';
-    
-          const listItem = document.createElement('li');
-          listItem.innerText = `${data.id}: ${data.name} ${data.surname}: ${data.position} `;
-          infoList.appendChild(listItem);
-        });
+      if (data) {
+        switch (endpoint) {
+          case 'plantas':
+            const plantItem = document.createElement('li');
+            plantItem.innerText = `${data.id}: ${data.name} - ${data.location}`;
+            infoList.appendChild(plantItem);
+            break;
+          case 'requisiciones':
+            const requisicionesItem = document.createElement('li');
+            requisicionesItem.innerText = `${data.id}: ${data.proyecto} - for plant:${data.plant_id} cost ${data.price_mxn} MXN and ${data.price_usd} USD`;
+            infoList.appendChild(requisicionesItem);
+            break;
+          case 'catalogo':
+            const catalogoItem = document.createElement('li');
+            catalogoItem.innerText = `${data.item_id}: ${data.item_name} - ${data.brand}`;
+            infoList.appendChild(catalogoItem);
+            break;
+          case 'users':
+            const usersItem = document.createElement('li');
+            usersItem.innerText = `${data.id}: ${data.name} ${data.surname}: ${data.position} `;
+            infoList.appendChild(usersItem);
+            break;
+          default:
+            const defaultItem = document.createElement('li');
+            defaultItem.innerText = 'Endpoint not recognized';
+            infoList.appendChild(defaultItem);
+            break;
+        }
+      } else {
+        const defaultItem = document.createElement('li');
+        defaultItem.innerText = 'Element non-existent';
+        infoList.appendChild(defaultItem);
       }
     }
     
+    function getById() {
+      const id = document.getElementById('id-input').value;
+      const path = window.location.pathname + '/' + id;
+    
+      const endpoint = path.split('/')[1];
+    
+      fetchData(path)
+        .then(data => {
+          displayData(data, endpoint);
+        })
+        .catch(error => {
+          displayData(undefined, endpoint);
+        });
+    }
     
 
     // add an event listener to the button
